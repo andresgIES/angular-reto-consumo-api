@@ -3,17 +3,17 @@
   <div class="jumbotron">
 
     <h1 class="display-4 mt-4 centrar-contenido">Consumo de la API de MARVEL Comics</h1>
-    <p class="centrar-contenido">Selecciona una funcion para obtener más información</p>
+    <p class="centrar-contenido">Selecciona una opción para obtener más información</p>
 
     <div class="row">
       <div class="col-3 col-lg centrar-contenido">
-        <button type="button" class="btn btn-dark" [routerLink]="['/consultar']" routerLinkActive="router-link-active" >Personajes</button>
+        <button type="button" class="btn btn-dark" (click)="createComponentPersonajes()" >Personajes</button>
       </div>
       <div class="col-3 col-lg centrar-contenido">
-        <button type="button" class="btn btn-dark">Comics</button>
+        <button type="button" class="btn btn-dark" (click)="createComponentComics()">Comics</button>
       </div>
       <div class="col-3 col-lg centrar-contenido">
-        <button type="button" class="btn btn-dark">Series</button>
+        <button type="button" class="btn btn-dark" (click)="createComponentSeries()">Series</button>
       </div>
     </div>
 
@@ -25,6 +25,8 @@
 
 <div class="container">
 
-  <router-outlet></router-outlet>
+  <!--<router-outlet></router-outlet>-->
+
+  <ng-container #componenteDinamico></ng-container>
 
 </div>

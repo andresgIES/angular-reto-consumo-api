@@ -2,18 +2,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConsultarPersonajeComponent } from './components/consultar-personaje/consultar-personaje.component';
+import { ConsultarComicComponent } from './components/consultar-comic/consultar-comic.component';
+import { DinamicComponentDirective } from './directives/dinamic-component.directive';
+import { ConsultarSeriesComponent } from './components/consultar-series/consultar-series.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConsultarPersonajeComponent
+    ConsultarPersonajeComponent,
+    ConsultarComicComponent,
+    DinamicComponentDirective,
+    ConsultarSeriesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     FormsModule
   ],

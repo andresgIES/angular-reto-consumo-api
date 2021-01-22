@@ -3,21 +3,20 @@ import { MarvelService } from 'src/app/services/marvel/marvel.service';
 
 @Component({
   selector: 'app-consultar-personaje',
-  templateUrl: './consultar-personaje.component.html',
-  styleUrls: ['./consultar-personaje.component.css']
+  templateUrl: './consultar-personaje.component.html'
 })
-export class ConsultarPersonajeComponent  {
+export class ConsultarPersonajeComponent {
 
   constructor(private marvelService: MarvelService) { }
 
   nombre = '';
-  imagenes: any[] = [];
+  personajes: any[] = [];
 
   public buscar() {
     this.marvelService.getPersonaje(this.nombre).subscribe(
       (data) => {
-        this.imagenes = data?.data?.results;
-        console.log(this.imagenes);
+        this.personajes = [];
+        this.personajes = data?.data?.results;
       }
     );
   }

@@ -5,12 +5,12 @@
   <div class="input-group mb-3 centrar-contenido">
     <div class="row">
       <div class="col-12 col-lg">
-        <h3 class="text-justified">Buscar por las iniciales del nombre</h3>
+        <h3 class="text-justified">Buscar por las iniciales del Comic</h3>
       </div>
       <br>
       <div class="row">
         <div class="col-9 col-lg">
-          <input type="text" class="form-control" placeholder="Iniciales del Nombre" [(ngModel)]="nombre">
+          <input type="text" class="form-control" placeholder="Iniciales del Comic" [(ngModel)]="comic">
         </div>
         <div class="col-3 col-lg">
           <div class="input-group-append">
@@ -25,12 +25,13 @@
 
   <div class="container d-flex flex-wrap align-center justify-content">
     <br>
-    <div class="card m-3" style="width: 18rem;" *ngFor="let personaje of personajes">
-      <img src="{{personaje?.thumbnail?.path}}.{{personaje?.thumbnail?.extension}}" class="card-img-top">
+    <div class="card m-3" style="width: 18rem;" *ngFor="let comic of comics">
+      <img src="{{comic?.thumbnail?.path}}.{{comic?.thumbnail?.extension}}" class="card-img-top">
       <div class="card-body">
-        <h5 class="card-title">{{personaje?.name}}</h5>
-        <p class="card-text">{{personaje?.description}}</p>
-        <p class="card-text" *ngIf="personaje?.description === ''">No Registra ninguna descripción</p>
+        <h5 class="card-title">{{comic?.title}}</h5>
+        <p class="card-text">{{comic?.description}}</p>
+        <p class="card-text" *ngIf="comic?.description === '' || comic?.description === null">No Registra ninguna
+          descripción</p>
       </div>
     </div>
   </div>
